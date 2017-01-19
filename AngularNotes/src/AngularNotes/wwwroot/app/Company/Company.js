@@ -14,8 +14,8 @@ var CompanyComponent = (function () {
     }
     CompanyComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            template: '<h1>My First Angular App</h1>'
+            selector: 'CompanyComponent',
+            template: "\n<base href=\"/\">\n<h1>My First Angular App</h1>\n"
         }), 
         __metadata('design:paramtypes', [])
     ], CompanyComponent);

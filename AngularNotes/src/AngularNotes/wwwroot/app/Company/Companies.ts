@@ -11,21 +11,21 @@ import { Data } from '../Data';
       {{ hero.Name }}
     </li>
   </ul>
-	<h2>Companies</h2>
-	<table class="table">
-		<tr>
-			<th>ID</th>
-			<th>Name</th>
-			<th>Case</th>
-		</tr>
-        <tbody *ngFor="let hero of GetCompanies()">  		
+<h2>Companies</h2>
+<table class="table">
+	<tr>
+		<th>ID</th>
+		<th>Name</th>
+		<th>Case</th>
+	</tr>
+    <tbody *ngFor="let hero of GetCompanies()">  		
 		<tr>
 			<td>{{hero.ID}}</td>
 			<td><a name="{{hero.Name}}">{{hero.Name}}</a></td>
 			<td></td>
 		</tr>
     </tbody>
-	</table>
+</table>
 `
 })
 export class CompaniesComponent {
