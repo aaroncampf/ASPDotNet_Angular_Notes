@@ -3,7 +3,7 @@
 @Component({
     selector: 'my-app',
     template: `
-<CompaniesComponent></CompaniesComponent>
+<router-outlet></router-outlet> <--! HTML Gets inserted Here !-->
 `
 })
 export class AppComponent { }

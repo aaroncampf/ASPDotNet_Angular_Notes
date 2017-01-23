@@ -1,4 +1,4 @@
-﻿export const Data = {
+﻿export const Data: Data = {
     Companies: [
         {
             "ID": 1,
@@ -25,7 +25,7 @@
                         } 
                     ]
                 }
-            ] as Array<Contact>,
+            ],
             "Quotes": [
                 {
                     "ID": "1",
@@ -45,4 +45,9 @@
         }
     ],
         "Products": []
+}
+
+export interface Data {
+    Companies: Array<Company>
+    Products: Array<any>
 }

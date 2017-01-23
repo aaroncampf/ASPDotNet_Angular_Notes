@@ -3,7 +3,6 @@
 @Component({
     selector: 'CompanyComponent',
     template: `
-<base href="/">
 <h1>My First Angular App</h1>
 `
 })

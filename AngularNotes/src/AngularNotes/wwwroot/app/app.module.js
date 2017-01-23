@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
+var router_1 = require('@angular/router');
 var app_component_1 = require('./app.component');
 var Companies_1 = require('./Company/Companies');
 var Company_1 = require('./Company/Company');
@@ -20,9 +21,14 @@ var AppModule = (function () {
         core_1.NgModule({
             imports: [
                 platform_browser_1.BrowserModule,
+                router_1.RouterModule.forRoot([
+                    { path: "Companies", component: Companies_1.CompaniesComponent },
+                    { path: "Company", component: Company_1.CompanyComponent },
+                    { path: "", component: app_component_1.AppComponent }
+                ])
             ],
             declarations: [app_component_1.AppComponent, Companies_1.CompaniesComponent, Company_1.CompanyComponent],
-            bootstrap: [app_component_1.AppComponent],
+            bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])
     ], AppModule);

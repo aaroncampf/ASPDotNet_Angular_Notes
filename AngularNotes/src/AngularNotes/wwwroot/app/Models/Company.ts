@@ -8,4 +8,8 @@ class Company {
     public Zip: string;
     public Phone: string;
     public Contacts: Array<Contact>;
+
+
+    //public Quotes: Array<Quote>;
+    public Quotes: Array<any>
 }
