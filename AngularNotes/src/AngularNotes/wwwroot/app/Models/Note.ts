@@ -1,6 +1,6 @@
-﻿class Note {
-    public ID: number;
-    public Title: string;
-    public Created: Date;
-    public Text: string;
+﻿export interface Note {
+    ID: number;
+    Title: string;
+    Created: Date;
+    Text: string;
 }

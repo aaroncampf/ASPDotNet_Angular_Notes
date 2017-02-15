@@ -9,27 +9,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var Data_1 = require('../Data');
-var CompanyComponent = (function () {
-    function CompanyComponent(route) {
-        var _this = this;
-        this.route = route;
-        route.params.subscribe(function (params) {
-            var ID = +params['id']; // (+) converts string 'id' to a number
-            _this.Record = Data_1.Data.Companies[+params['id']];
-        });
+//import Company as Business from '../Models/Company'
+var Business = (function () {
+    function Business() {
+        this.Record = new Company();
+        this.Record.Name = "Hello World";
     }
-    CompanyComponent.prototype.Save = function () {
+    Business.prototype.Save = function () {
     };
-    CompanyComponent = __decorate([
+    Business = __decorate([
         core_1.Component({
-            selector: 'CompanyComponent',
-            templateUrl: 'app/Company/Company.html'
+            selector: 'BusinessComponent',
+            templateUrl: 'app/Company/Buiness.html'
         }), 
-        __metadata('design:paramtypes', [router_1.ActivatedRoute])
-    ], CompanyComponent);
-    return CompanyComponent;
+        __metadata('design:paramtypes', [])
+    ], Business);
+    return Business;
 }());
-exports.CompanyComponent = CompanyComponent;
-//# sourceMappingURL=Company.js.map
+exports.Business = Business;
+//# sourceMappingURL=Business.js.map

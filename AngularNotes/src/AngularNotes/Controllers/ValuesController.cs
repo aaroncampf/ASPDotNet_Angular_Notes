@@ -6,8 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebApplication2.Controllers
 {
-    [Route("api/[controller]")]
-    public class ValuesController : Controller
+  //[Route("api/ValuesController")]
+  [Route("api/[controller]")]
+  public class ValuesController : Controller
     {
         // GET api/values
         [HttpGet]

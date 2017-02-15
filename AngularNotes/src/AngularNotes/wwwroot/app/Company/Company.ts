@@ -1,12 +1,25 @@
 ﻿import { Component } from '@angular/core';
+import { ActivatedRoute  } from '@angular/router';
+
+import { Data } from '../Data';
+import { Company } from '../models/company';
+
 
 @Component({
     selector: 'CompanyComponent',
-    template: `
-<h1>My First Angular App</h1>
-`
+    templateUrl: 'app/Company/Company.html'
 })
 export class CompanyComponent {
-    public Company: Company;
+    public Record: Company;
 
+    constructor(private route: ActivatedRoute) {
+        route.params.subscribe(params => {
+          let ID = +params['id']; // (+) converts string 'id' to a number
+          this.Record = Data.Companies[+params['id']];
+        });        
+    }
+
+    public Save() {
+
+    }
 }

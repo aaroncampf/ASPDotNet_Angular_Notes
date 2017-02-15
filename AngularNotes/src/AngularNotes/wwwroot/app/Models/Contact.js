@@ -1,6 +1,2 @@
-var Contact = (function () {
-    function Contact() {
-    }
-    return Contact;
-}());
+"use strict";
 //# sourceMappingURL=Contact.js.map

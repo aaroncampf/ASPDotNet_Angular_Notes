@@ -1,6 +1,2 @@
-var Note = (function () {
-    function Note() {
-    }
-    return Note;
-}());
+"use strict";
 //# sourceMappingURL=Note.js.map

@@ -1,9 +1,11 @@
-﻿class Contact {
-    public ID: number;
-    public Name: string;
-    public Position: string;
-    public Phone: string;
-    public Email: string;
-    public Details: string;
-    public Notes: Array<Note>;
+﻿import { Note } from './Note';
+
+export interface Contact {
+    ID: number;
+    Name: string;
+    Position: string;
+    Phone: string;
+    Email: string;
+    Details: string;
+    Notes: Array<Note>;
 }

@@ -1,15 +1,16 @@
-﻿
-class Company {
-    public ID: number;
-    public Name: string;
-    public Address: string;
-    public City:string;
-    public State: string;
-    public Zip: string;
-    public Phone: string;
-    public Contacts: Array<Contact>;
+﻿import { Contact } from './Contact';
+
+export interface Company {
+   ID: number;
+   Name: string;
+   Address: string;
+   City: string;
+   State: string;
+   Zip: string;
+   Phone: string;
+   Contacts: Array<Contact>;
 
 
     //public Quotes: Array<Quote>;
-    public Quotes: Array<any>
+    Quotes: Array<any>
 }

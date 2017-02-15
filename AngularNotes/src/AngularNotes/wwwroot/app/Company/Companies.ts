@@ -1,5 +1,7 @@
-﻿import { Component } from '@angular/core';
+﻿/// <reference path="../models/company.ts" />
+import { Component } from '@angular/core';
 import { Data } from '../Data';
+import { Company } from '../models/company';
 
 
 @Component({
@@ -32,6 +34,4 @@ export class CompaniesComponent {
     public GetCompanies(): Array<Company> {
         return Data.Companies;
     }
-
-
 }

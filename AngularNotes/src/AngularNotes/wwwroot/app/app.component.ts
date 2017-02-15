@@ -3,7 +3,10 @@
 @Component({
     selector: 'my-app',
     template: `
-<router-outlet></router-outlet> <--! HTML Gets inserted Here !-->
+
+<p>Header</p>
+<router-outlet></router-outlet>
+<p>Footer</p>
 `
 })
 export class AppComponent { }

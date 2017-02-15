@@ -1,4 +1,6 @@
-﻿export const Data: Data = {
+﻿import { Company } from './models/company';
+
+export const Data: Data = {
     Companies: [
         {
             "ID": 1,

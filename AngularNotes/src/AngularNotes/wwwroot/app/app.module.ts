@@ -1,21 +1,22 @@
 ﻿import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule }      from '@angular/router';
+import { FormsModule, ReactiveFormsModule }      from '@angular/forms';
+
 
 import { AppComponent }   from './app.component';
 import { CompaniesComponent } from './Company/Companies';
-import { CompanyComponent } from './Company/Company';   
-
-
-
+import { CompanyComponent } from './Company/Company';
 
 
 @NgModule({
     imports: [
         BrowserModule,
+        FormsModule,
+        ReactiveFormsModule,
         RouterModule.forRoot([
             { path: "Companies", component: CompaniesComponent },
-            { path: "Company", component: CompanyComponent },
+            { path: "Company/:id", component: CompanyComponent },
             { path: "", component: AppComponent }
         ])
     ],
