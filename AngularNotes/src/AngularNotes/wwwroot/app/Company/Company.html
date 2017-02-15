@@ -1,28 +1,27 @@
-﻿<h1>Hello World</h1>
+﻿<h1>{{Record.Name}}</h1>
 
-<p>{{Record.Name}}</p>
+<div class="form-inline">
+	<p><strong>ID:</strong> {{Record.ID}}</p>
 
-
-<form>
-	<label>ID:</label>
-	<input [(ngModel)]="Record.ID" />
 	<label>Name:</label>
 	<input [(ngModel)]="Record.Name" />
+	<br />
+	<label>Address:</label>
 	<input [(ngModel)]="Record.Address" />
+	<br />
+	<label>City:</label>
 	<input [(ngModel)]="Record.City" />
-	<input [(ngModel)]="Record.State" />
-	<input [(ngModel)]="Record.Zip" />
-	<input [(ngModel)]="Record.Phone" />
-
-</form>
-
-<div>
-	<input [(ngModel)]="Record.ID" />
-	<input [(ngModel)]="Record.Name" />
-	<input [(ngModel)]="Record.Address" />
+	<br />
+	<label>City:</label>
 	<input [(ngModel)]="Record.City" />
+	<br />
+	<label>State:</label>
 	<input [(ngModel)]="Record.State" />
+	<br />
+	<label>Zip:</label>
 	<input [(ngModel)]="Record.Zip" />
+	<br />
+	<label>Phone:</label>
 	<input [(ngModel)]="Record.Phone" />
 </div>
 
