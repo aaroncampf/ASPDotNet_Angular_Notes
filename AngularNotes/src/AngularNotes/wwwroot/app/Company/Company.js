@@ -16,8 +16,8 @@ var CompanyComponent = (function () {
         var _this = this;
         this.route = route;
         route.params.subscribe(function (params) {
-            var ID = +params['id']; // (+) converts string 'id' to a number
-            _this.Record = Data_1.Data.Companies[+params['id']];
+            var ID = +params['id']; // (+) converts string 'id' to a number   
+            _this.Record = Data_1.Data.Companies.find(function (x) { return x.ID == ID; });
         });
     }
     CompanyComponent.prototype.Save = function () {

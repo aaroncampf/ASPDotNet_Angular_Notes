@@ -20,7 +20,7 @@ var CompaniesComponent = (function () {
     CompaniesComponent = __decorate([
         core_1.Component({
             selector: 'CompaniesComponent',
-            template: "\n<h1>Companies</h1>\n  <ul>\n    <li *ngFor=\"let hero of GetCompanies()\">\n      {{ hero.Name }}\n    </li>\n  </ul>\n<h2>Companies</h2>\n<table class=\"table\">\n\t<tr>\n\t\t<th>ID</th>\n\t\t<th>Name</th>\n\t\t<th>Case</th>\n\t</tr>\n    <tbody *ngFor=\"let hero of GetCompanies()\">  \t\t\n\t\t<tr>\n\t\t\t<td>{{hero.ID}}</td>\n\t\t\t<td><a name=\"{{hero.Name}}\">{{hero.Name}}</a></td>\n\t\t\t<td></td>\n\t\t</tr>\n    </tbody>\n</table>\n"
+            template: "\n<h1>Companies</h1>\n  <ul>\n    <li *ngFor=\"let hero of GetCompanies()\">\n      {{ hero.Name }}\n    </li>\n  </ul>\n<h2>Companies</h2>\n<table class=\"table\">\n\t<tr>\n\t\t<th>ID</th>\n\t\t<th>Name</th>\n\t\t<th>Case</th>\n\t</tr>\n    <tbody *ngFor=\"let hero of GetCompanies()\">  \t\t\n\t\t<tr>\n\t\t\t<td>{{hero.ID}}</td>\n\t\t\t<td><a href=\"Company/{{hero.ID}}\">{{hero.Name}}</a></td>\n\t\t\t<td></td>\n\t\t</tr>\n    </tbody>\n</table>\n"
         }), 
         __metadata('design:paramtypes', [])
     ], CompaniesComponent);

@@ -23,7 +23,7 @@ import { Company } from '../models/company';
     <tbody *ngFor="let hero of GetCompanies()">  		
 		<tr>
 			<td>{{hero.ID}}</td>
-			<td><a name="{{hero.Name}}">{{hero.Name}}</a></td>
+			<td><a href="Company/{{hero.ID}}">{{hero.Name}}</a></td>
 			<td></td>
 		</tr>
     </tbody>
