@@ -10,9 +10,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 /// <reference path="../models/company.ts" />
 var core_1 = require('@angular/core');
+var http_1 = require('@angular/http');
+var core_2 = require('@angular/core');
 var Data_1 = require('../Data');
 var CompaniesComponent = (function () {
-    function CompaniesComponent() {
+    function CompaniesComponent(_http) {
+        this._http = _http;
     }
     CompaniesComponent.prototype.GetCompanies = function () {
         return Data_1.Data.Companies;
@@ -20,9 +23,10 @@ var CompaniesComponent = (function () {
     CompaniesComponent = __decorate([
         core_1.Component({
             selector: 'CompaniesComponent',
-            template: "\n<h1>Companies</h1>\n  <ul>\n    <li *ngFor=\"let hero of GetCompanies()\">\n      {{ hero.Name }}\n    </li>\n  </ul>\n<h2>Companies</h2>\n<table class=\"table\">\n\t<tr>\n\t\t<th>ID</th>\n\t\t<th>Name</th>\n\t\t<th>Case</th>\n\t</tr>\n    <tbody *ngFor=\"let hero of GetCompanies()\">  \t\t\n\t\t<tr>\n\t\t\t<td>{{hero.ID}}</td>\n\t\t\t<td><a href=\"Company/{{hero.ID}}\">{{hero.Name}}</a></td>\n\t\t\t<td></td>\n\t\t</tr>\n    </tbody>\n</table>\n"
-        }), 
-        __metadata('design:paramtypes', [])
+            template: "\n<h1>Companies</h1>\n<table class=\"table\">\n\t<tr>\n\t\t<th>ID</th>\n\t\t<th>Name</th>\n\t\t<th>Address</th>\n\t</tr>\n    <tbody *ngFor=\"let Company of GetCompanies()\">  \t\t\n\t\t<tr>\n\t\t\t<td>{{Company.ID}}</td>\n\t\t\t<td><a href=\"Company/{{Company.ID}}\">{{Company.Name}}</a></td>\n\t\t\t<td>{{Company.Address}}</td>\n\t\t</tr>\n    </tbody>\n</table>\n\n<a class=\"btn btn-primary\" href=\"Company/0\">Add Company</a>\n"
+        }),
+        core_2.Injectable(), 
+        __metadata('design:paramtypes', [http_1.Http])
     ], CompaniesComponent);
     return CompaniesComponent;
 }());

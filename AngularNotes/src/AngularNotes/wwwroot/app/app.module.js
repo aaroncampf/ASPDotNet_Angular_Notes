@@ -12,6 +12,7 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var router_1 = require('@angular/router');
 var forms_1 = require('@angular/forms');
+var http_1 = require('@angular/http');
 var app_component_1 = require('./app.component');
 var Companies_1 = require('./Company/Companies');
 var Company_1 = require('./Company/Company');
@@ -24,6 +25,7 @@ var AppModule = (function () {
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
                 forms_1.ReactiveFormsModule,
+                http_1.HttpModule,
                 router_1.RouterModule.forRoot([
                     { path: "Companies", component: Companies_1.CompaniesComponent },
                     { path: "Company/:id", component: Company_1.CompanyComponent },

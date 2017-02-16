@@ -17,7 +17,13 @@ var CompanyComponent = (function () {
         this.route = route;
         route.params.subscribe(function (params) {
             var ID = +params['id']; // (+) converts string 'id' to a number   
-            _this.Record = Data_1.Data.Companies.find(function (x) { return x.ID == ID; });
+            if (ID == 0) {
+                _this.Record = { ID: Data_1.Data.Companies.length + 1 };
+                Data_1.Data.Companies.push(_this.Record);
+            }
+            else {
+                _this.Record = Data_1.Data.Companies.find(function (x) { return x.ID == ID; });
+            }
         });
     }
     CompanyComponent.prototype.Save = function () {

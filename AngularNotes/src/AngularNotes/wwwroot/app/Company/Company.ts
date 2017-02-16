@@ -15,8 +15,15 @@ export class CompanyComponent {
     constructor(private route: ActivatedRoute) {
         route.params.subscribe(params => {
             let ID = +params['id']; // (+) converts string 'id' to a number   
-            this.Record = Data.Companies.find(x => x.ID == ID);
-        });        
+
+            if (ID == 0) {
+                this.Record = { ID: Data.Companies.length + 1 } as Company
+                Data.Companies.push(this.Record);
+            }
+            else {
+                this.Record = Data.Companies.find(x => x.ID == ID);
+            }
+        });
     }
 
     public Save() {
