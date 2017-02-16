@@ -9,9 +9,11 @@ import { Data } from '../Data';
 import { Company } from '../models/company';
 
 
+
+
 @Component({
-    selector: 'CompaniesComponent',
-    template: `
+	selector: 'CompaniesComponent',
+	template: `
 <h1>Companies</h1>
 <table class="table">
 	<tr>
@@ -19,13 +21,13 @@ import { Company } from '../models/company';
 		<th>Name</th>
 		<th>Address</th>
 	</tr>
-    <tbody *ngFor="let Company of GetCompanies()">  		
+	<tbody *ngFor="let Company of GetCompanies()">  		
 		<tr>
 			<td>{{Company.ID}}</td>
 			<td><a href="Company/{{Company.ID}}">{{Company.Name}}</a></td>
 			<td>{{Company.Address}}</td>
 		</tr>
-    </tbody>
+	</tbody>
 </table>
 
 <a class="btn btn-primary" href="Company/0">Add Company</a>
@@ -33,11 +35,11 @@ import { Company } from '../models/company';
 })
 @Injectable()
 export class CompaniesComponent {
-    constructor(private _http: Http) { }
+	constructor(private _http: Http) { }
 
-    public GetCompanies(): Company[] {
+	public GetCompanies(): Company[] {
+	   //TODO Get help at mentoship saturdays with using _http and .map
 
-
-        return Data.Companies;
-    }
+		return Data.Companies;
+	}
 }

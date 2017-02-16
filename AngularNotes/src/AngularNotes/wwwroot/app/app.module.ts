@@ -9,6 +9,7 @@ import { HttpModule }      from '@angular/http';
 import { AppComponent }   from './app.component';
 import { CompaniesComponent } from './Company/Companies';
 import { CompanyComponent } from './Company/Company';
+import { ContactComponent } from './Contact/Contact';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { CompanyComponent } from './Company/Company';
         RouterModule.forRoot([
             { path: "Companies", component: CompaniesComponent },
             { path: "Company/:id", component: CompanyComponent },
+            { path: "Contact/:CompanyID/:ContactID", component: ContactComponent },
             { path: "", component: AppComponent }
         ])
     ],

@@ -16,6 +16,7 @@ var http_1 = require('@angular/http');
 var app_component_1 = require('./app.component');
 var Companies_1 = require('./Company/Companies');
 var Company_1 = require('./Company/Company');
+var Contact_1 = require('./Contact/Contact');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -29,6 +30,7 @@ var AppModule = (function () {
                 router_1.RouterModule.forRoot([
                     { path: "Companies", component: Companies_1.CompaniesComponent },
                     { path: "Company/:id", component: Company_1.CompanyComponent },
+                    { path: "Contact/:CompanyID/:ContactID", component: Contact_1.ContactComponent },
                     { path: "", component: app_component_1.AppComponent }
                 ])
             ],

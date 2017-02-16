@@ -18,12 +18,13 @@ var CompaniesComponent = (function () {
         this._http = _http;
     }
     CompaniesComponent.prototype.GetCompanies = function () {
+        //TODO Get help at mentoship saturdays with using _http and .map
         return Data_1.Data.Companies;
     };
     CompaniesComponent = __decorate([
         core_1.Component({
             selector: 'CompaniesComponent',
-            template: "\n<h1>Companies</h1>\n<table class=\"table\">\n\t<tr>\n\t\t<th>ID</th>\n\t\t<th>Name</th>\n\t\t<th>Address</th>\n\t</tr>\n    <tbody *ngFor=\"let Company of GetCompanies()\">  \t\t\n\t\t<tr>\n\t\t\t<td>{{Company.ID}}</td>\n\t\t\t<td><a href=\"Company/{{Company.ID}}\">{{Company.Name}}</a></td>\n\t\t\t<td>{{Company.Address}}</td>\n\t\t</tr>\n    </tbody>\n</table>\n\n<a class=\"btn btn-primary\" href=\"Company/0\">Add Company</a>\n"
+            template: "\n<h1>Companies</h1>\n<table class=\"table\">\n\t<tr>\n\t\t<th>ID</th>\n\t\t<th>Name</th>\n\t\t<th>Address</th>\n\t</tr>\n\t<tbody *ngFor=\"let Company of GetCompanies()\">  \t\t\n\t\t<tr>\n\t\t\t<td>{{Company.ID}}</td>\n\t\t\t<td><a href=\"Company/{{Company.ID}}\">{{Company.Name}}</a></td>\n\t\t\t<td>{{Company.Address}}</td>\n\t\t</tr>\n\t</tbody>\n</table>\n\n<a class=\"btn btn-primary\" href=\"Company/0\">Add Company</a>\n"
         }),
         core_2.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http])
