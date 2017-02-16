@@ -21,7 +21,7 @@ import { ContactComponent } from './Contact/Contact';
         RouterModule.forRoot([
             { path: "Companies", component: CompaniesComponent },
             { path: "Company/:id", component: CompanyComponent },
-            { path: "Contact/:CompanyID/:ContactID", component: ContactComponent },
+            //{ path: "Contact/:CompanyID/:ContactID", component: ContactComponent },
             { path: "", component: AppComponent }
         ])
     ],
