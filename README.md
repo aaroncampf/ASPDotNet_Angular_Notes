@@ -2,7 +2,7 @@
 A project devoted to learning Angular by creating an online Customer Relation Management (CRM) tool.
 
 ## Data Structure
-Comany -> Contact -> Note
+Company -> Contact -> Note
 Company -> Quote
 
 ## Features
