@@ -40,6 +40,8 @@ export class CompaniesComponent {
 	public GetCompanies(): Company[] {
 	   //TODO Get help at mentoship saturdays with using _http and .map
 
+        //this._http.get('api/Company').map(
+
 		return Data.Companies;
 	}
 }

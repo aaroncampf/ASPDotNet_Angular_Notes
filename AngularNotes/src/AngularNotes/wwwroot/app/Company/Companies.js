@@ -19,6 +19,7 @@ var CompaniesComponent = (function () {
     }
     CompaniesComponent.prototype.GetCompanies = function () {
         //TODO Get help at mentoship saturdays with using _http and .map
+        //this._http.get('api/Company').map(
         return Data_1.Data.Companies;
     };
     CompaniesComponent = __decorate([
