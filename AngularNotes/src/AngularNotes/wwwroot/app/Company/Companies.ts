@@ -1,13 +1,15 @@
 ﻿/// <reference path="../models/company.ts" />
-import { Component } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Component, OnInit } from '@angular/core';
 import { Injectable } from '@angular/core';
+
+import { Http, Response } from '@angular/http';
 
 
 
 import { Data } from '../Data';
 import { Company } from '../models/company';
 
+import 'rxjs/Rx';
 
 
 
@@ -16,16 +18,16 @@ import { Company } from '../models/company';
 	template: `
 <h1>Companies</h1>
 <table class="table">
-	<tr>
+	<thead>
 		<th>ID</th>
 		<th>Name</th>
 		<th>Address</th>
-	</tr>
-	<tbody *ngFor="let Company of GetCompanies()">  		
-		<tr>
-			<td>{{Company.ID}}</td>
-			<td><a href="Company/{{Company.ID}}">{{Company.Name}}</a></td>
-			<td>{{Company.Address}}</td>
+	</thead>
+	<tbody>  		
+		<tr *ngFor="let Company of Companies">
+			<td>{{Company.id}}</td>
+			<td><a href="Company/{{Company.id}}">{{Company.name}}</a></td>
+			<td>{{Company.address}}</td>
 		</tr>
 	</tbody>
 </table>
@@ -34,14 +36,40 @@ import { Company } from '../models/company';
 `
 })
 @Injectable()
-export class CompaniesComponent {
+export class CompaniesComponent implements OnInit {
+    public Companies: Company[];
+
 	constructor(private _http: Http) { }
 
+    /*
 	public GetCompanies(): Company[] {
 	   //TODO Get help at mentoship saturdays with using _http and .map
-
         //this._http.get('api/Company').map(
 
+        console.log("GetCompanies()");
+
+        this._http.get('api/Company');
+
 		return Data.Companies;
-	}
+    }
+    */
+
+    ngOnInit() {
+        //this.Companies = Data.Companies;
+
+        let Get: any = this._http.get('api/Company');
+        let Json: any = Get.map(x => x.json());
+        Json.subscribe(x => {
+            this.Companies = x;
+
+            console.log(this.Companies[0]);
+        });
+
+
+        
+        console.log(Json);
+
+        console.log("ngOnInit()");
+    }
+
 }

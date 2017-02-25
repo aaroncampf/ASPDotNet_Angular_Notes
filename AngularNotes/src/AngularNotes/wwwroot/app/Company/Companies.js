@@ -10,22 +10,41 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 /// <reference path="../models/company.ts" />
 var core_1 = require('@angular/core');
-var http_1 = require('@angular/http');
 var core_2 = require('@angular/core');
-var Data_1 = require('../Data');
+var http_1 = require('@angular/http');
+require('rxjs/Rx');
 var CompaniesComponent = (function () {
     function CompaniesComponent(_http) {
         this._http = _http;
     }
-    CompaniesComponent.prototype.GetCompanies = function () {
-        //TODO Get help at mentoship saturdays with using _http and .map
+    /*
+    public GetCompanies(): Company[] {
+       //TODO Get help at mentoship saturdays with using _http and .map
         //this._http.get('api/Company').map(
-        return Data_1.Data.Companies;
+
+        console.log("GetCompanies()");
+
+        this._http.get('api/Company');
+
+        return Data.Companies;
+    }
+    */
+    CompaniesComponent.prototype.ngOnInit = function () {
+        //this.Companies = Data.Companies;
+        var _this = this;
+        var Get = this._http.get('api/Company');
+        var Json = Get.map(function (x) { return x.json(); });
+        Json.subscribe(function (x) {
+            _this.Companies = x;
+            console.log(_this.Companies[0]);
+        });
+        console.log(Json);
+        console.log("ngOnInit()");
     };
     CompaniesComponent = __decorate([
         core_1.Component({
             selector: 'CompaniesComponent',
-            template: "\n<h1>Companies</h1>\n<table class=\"table\">\n\t<tr>\n\t\t<th>ID</th>\n\t\t<th>Name</th>\n\t\t<th>Address</th>\n\t</tr>\n\t<tbody *ngFor=\"let Company of GetCompanies()\">  \t\t\n\t\t<tr>\n\t\t\t<td>{{Company.ID}}</td>\n\t\t\t<td><a href=\"Company/{{Company.ID}}\">{{Company.Name}}</a></td>\n\t\t\t<td>{{Company.Address}}</td>\n\t\t</tr>\n\t</tbody>\n</table>\n\n<a class=\"btn btn-primary\" href=\"Company/0\">Add Company</a>\n"
+            template: "\n<h1>Companies</h1>\n<table class=\"table\">\n\t<thead>\n\t\t<th>ID</th>\n\t\t<th>Name</th>\n\t\t<th>Address</th>\n\t</thead>\n\t<tbody>  \t\t\n\t\t<tr *ngFor=\"let Company of Companies\">\n\t\t\t<td>{{Company.id}}</td>\n\t\t\t<td><a href=\"Company/{{Company.id}}\">{{Company.name}}</a></td>\n\t\t\t<td>{{Company.address}}</td>\n\t\t</tr>\n\t</tbody>\n</table>\n\n<a class=\"btn btn-primary\" href=\"Company/0\">Add Company</a>\n"
         }),
         core_2.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http])
