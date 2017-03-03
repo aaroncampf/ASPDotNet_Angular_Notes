@@ -1,5 +1,6 @@
 ﻿import { Component } from '@angular/core';
 import { ActivatedRoute  } from '@angular/router';
+import { Http, Response } from '@angular/http';
 
 //import { Data } from '../Data';
 import { Company } from '../models/company';
@@ -12,6 +13,7 @@ import { Company } from '../models/company';
 export class CompanyComponent {
     public Record: Company;
 
+    /*
     constructor(private route: ActivatedRoute) {
         route.params.subscribe(params => {
             let ID = +params['id']; // (+) converts string 'id' to a number   
@@ -25,7 +27,19 @@ export class CompanyComponent {
             }
         });
     }
+    */
 
+    constructor(private route: ActivatedRoute, private _http: Http) {
+        route.params.subscribe(params => {
+            let ID = +params['id']; // (+) converts string 'id' to a number  
+
+            let Get: any = this._http.get(`api/Company/${ID}`);
+            let Json: any = Get.map(x => x.json());
+            Json.subscribe(x => {
+                this.Record = x;
+            });
+        });
+    }
     public Save() {
 
     }

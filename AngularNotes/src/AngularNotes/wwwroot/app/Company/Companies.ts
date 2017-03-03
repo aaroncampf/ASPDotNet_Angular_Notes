@@ -32,7 +32,7 @@ import 'rxjs/Rx';
 	</tbody>
 </table>
 
-<a class="btn btn-primary" href="Company/0">Add Company</a>
+<a class="btn btn-primary" href="Company/-1">Add Company</a>
 `
 })
 @Injectable()

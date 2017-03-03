@@ -10,19 +10,34 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
+var http_1 = require('@angular/http');
 var CompanyComponent = (function () {
-    function CompanyComponent(route) {
-        var _this = this;
-        this.route = route;
-        route.params.subscribe(function (params) {
-            var ID = +params['id']; // (+) converts string 'id' to a number   
+    /*
+    constructor(private route: ActivatedRoute) {
+        route.params.subscribe(params => {
+            let ID = +params['id']; // (+) converts string 'id' to a number
+
             if (ID == 0) {
-                _this.Record = { ID: Data.Companies.length + 1 };
-                Data.Companies.push(_this.Record);
+                this.Record = { ID: Data.Companies.length + 1 } as Company
+                Data.Companies.push(this.Record);
             }
             else {
-                _this.Record = Data.Companies.find(function (x) { return x.ID == ID; });
+                this.Record = Data.Companies.find(x => x.ID == ID);
             }
+        });
+    }
+    */
+    function CompanyComponent(route, _http) {
+        var _this = this;
+        this.route = route;
+        this._http = _http;
+        route.params.subscribe(function (params) {
+            var ID = +params['id']; // (+) converts string 'id' to a number  
+            var Get = _this._http.get("api/Company/" + ID);
+            var Json = Get.map(function (x) { return x.json(); });
+            Json.subscribe(function (x) {
+                _this.Record = x;
+            });
         });
     }
     CompanyComponent.prototype.Save = function () {
@@ -32,7 +47,7 @@ var CompanyComponent = (function () {
             selector: 'CompanyComponent',
             templateUrl: 'app/Company/Company.html'
         }), 
-        __metadata('design:paramtypes', [router_1.ActivatedRoute])
+        __metadata('design:paramtypes', [router_1.ActivatedRoute, http_1.Http])
     ], CompanyComponent);
     return CompanyComponent;
 }());
