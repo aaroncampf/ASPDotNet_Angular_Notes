@@ -10,7 +10,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var Data_1 = require('../Data');
 var CompanyComponent = (function () {
     function CompanyComponent(route) {
         var _this = this;
@@ -18,11 +17,11 @@ var CompanyComponent = (function () {
         route.params.subscribe(function (params) {
             var ID = +params['id']; // (+) converts string 'id' to a number   
             if (ID == 0) {
-                _this.Record = { ID: Data_1.Data.Companies.length + 1 };
-                Data_1.Data.Companies.push(_this.Record);
+                _this.Record = { ID: Data.Companies.length + 1 };
+                Data.Companies.push(_this.Record);
             }
             else {
-                _this.Record = Data_1.Data.Companies.find(function (x) { return x.ID == ID; });
+                _this.Record = Data.Companies.find(function (x) { return x.ID == ID; });
             }
         });
     }

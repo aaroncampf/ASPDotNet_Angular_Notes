@@ -41,35 +41,12 @@ export class CompaniesComponent implements OnInit {
 
 	constructor(private _http: Http) { }
 
-    /*
-	public GetCompanies(): Company[] {
-	   //TODO Get help at mentoship saturdays with using _http and .map
-        //this._http.get('api/Company').map(
-
-        console.log("GetCompanies()");
-
-        this._http.get('api/Company');
-
-		return Data.Companies;
-    }
-    */
-
     ngOnInit() {
-        //this.Companies = Data.Companies;
-
         let Get: any = this._http.get('api/Company');
         let Json: any = Get.map(x => x.json());
         Json.subscribe(x => {
             this.Companies = x;
-
-            console.log(this.Companies[0]);
         });
-
-
-        
-        console.log(Json);
-
-        console.log("ngOnInit()");
     }
-
 }
+ 

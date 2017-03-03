@@ -1,7 +1,7 @@
 ﻿import { Component } from '@angular/core';
 import { ActivatedRoute  } from '@angular/router';
 
-import { Data } from '../Data';
+//import { Data } from '../Data';
 import { Company } from '../models/company';
 
 
