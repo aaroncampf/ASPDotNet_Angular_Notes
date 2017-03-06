@@ -19,7 +19,7 @@ namespace WebApplication2.Controllers {
 
     public CompanyController() {
       db.Database.Migrate();
-    }
+      }
     // GET: api/values
     [HttpGet]
     public IEnumerable<Company> Get() {
@@ -50,7 +50,7 @@ namespace WebApplication2.Controllers {
         db.Companies.Add(company);
       }
 
-      //db.SaveChanges();
+      db.SaveChanges();
     }
   }
 }

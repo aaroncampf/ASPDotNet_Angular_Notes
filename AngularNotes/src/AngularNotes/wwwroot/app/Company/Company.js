@@ -41,6 +41,8 @@ var CompanyComponent = (function () {
         });
     }
     CompanyComponent.prototype.Save = function () {
+        var body = JSON.stringify(this.Record);
+        this._http.post('api/Company', body);
     };
     CompanyComponent = __decorate([
         core_1.Component({
