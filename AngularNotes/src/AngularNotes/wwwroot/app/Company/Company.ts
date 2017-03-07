@@ -43,6 +43,6 @@ export class CompanyComponent {
     }
     public Save() {
         let body = JSON.stringify(this.Record);
-        this._http.post('api/Company', body, { headers: new Headers({ "Content-Type": "application/json" }) );
+        this._http.post('api/Company', body);
     }
 }
