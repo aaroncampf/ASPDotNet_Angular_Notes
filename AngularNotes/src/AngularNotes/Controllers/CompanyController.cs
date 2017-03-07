@@ -18,7 +18,7 @@ namespace WebApplication2.Controllers {
 
 
     public CompanyController() {
-      db.Database.Migrate();
+      //db.Database.Migrate();
       }
     // GET: api/values
     [HttpGet]
@@ -33,9 +33,9 @@ namespace WebApplication2.Controllers {
       return db.Companies;
     }
 
-    //[HttpGet("Get/{id}")]
+
     [HttpGet("{id}")]
-    public Company Get(string id) => id == "-1" ? new Company() : db.Companies.Find(int.Parse(id));
+    public Company Get(int id) => id == -1 ? new Company() : db.Companies.Find(id);
 
     [HttpPost]
     public void Post(Company company) {

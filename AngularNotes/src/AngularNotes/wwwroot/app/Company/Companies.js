@@ -9,10 +9,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 /// <reference path="../models/company.ts" />
-var core_1 = require('@angular/core');
-var core_2 = require('@angular/core');
-var http_1 = require('@angular/http');
-require('rxjs/Rx');
+var core_1 = require("@angular/core");
+var core_2 = require("@angular/core");
+var http_1 = require("@angular/http");
+require("rxjs/Rx");
 var CompaniesComponent = (function () {
     function CompaniesComponent(_http) {
         this._http = _http;
@@ -25,15 +25,15 @@ var CompaniesComponent = (function () {
             _this.Companies = x;
         });
     };
-    CompaniesComponent = __decorate([
-        core_1.Component({
-            selector: 'CompaniesComponent',
-            template: "\n<h1>Companies</h1>\n<table class=\"table\">\n\t<thead>\n\t\t<th>ID</th>\n\t\t<th>Name</th>\n\t\t<th>Address</th>\n\t</thead>\n\t<tbody>  \t\t\n\t\t<tr *ngFor=\"let Company of Companies\">\n\t\t\t<td>{{Company.id}}</td>\n\t\t\t<td><a href=\"Company/{{Company.id}}\">{{Company.name}}</a></td>\n\t\t\t<td>{{Company.address}}</td>\n\t\t</tr>\n\t</tbody>\n</table>\n\n<a class=\"btn btn-primary\" href=\"Company/-1\">Add Company</a>\n"
-        }),
-        core_2.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http])
-    ], CompaniesComponent);
     return CompaniesComponent;
 }());
+CompaniesComponent = __decorate([
+    core_1.Component({
+        selector: 'CompaniesComponent',
+        template: "\n<h1>Companies</h1>\n<table class=\"table\">\n\t<thead>\n\t\t<th>ID</th>\n\t\t<th>Name</th>\n\t\t<th>Address</th>\n\t</thead>\n\t<tbody>  \t\t\n\t\t<tr *ngFor=\"let Company of Companies\">\n\t\t\t<td>{{Company.id}}</td>\n\t\t\t<td><a href=\"Company/{{Company.id}}\">{{Company.name}}</a></td>\n\t\t\t<td>{{Company.address}}</td>\n\t\t</tr>\n\t</tbody>\n</table>\n\n<a class=\"btn btn-primary\" href=\"Company/-1\">Add Company</a>\n"
+    }),
+    core_2.Injectable(),
+    __metadata("design:paramtypes", [http_1.Http])
+], CompaniesComponent);
 exports.CompaniesComponent = CompaniesComponent;
 //# sourceMappingURL=Companies.js.map

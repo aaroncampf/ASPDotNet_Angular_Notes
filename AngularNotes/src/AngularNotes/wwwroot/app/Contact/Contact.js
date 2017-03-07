@@ -8,9 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var Data_1 = require('../Data');
+var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
+var Data_1 = require("../Data");
 var ContactComponent = (function () {
     function ContactComponent(route) {
         var _this = this;
@@ -30,14 +30,14 @@ var ContactComponent = (function () {
     }
     ContactComponent.prototype.Save = function () {
     };
-    ContactComponent = __decorate([
-        core_1.Component({
-            selector: 'ContactComponent',
-            templateUrl: 'app/Contact/Contact.html'
-        }), 
-        __metadata('design:paramtypes', [router_1.ActivatedRoute])
-    ], ContactComponent);
     return ContactComponent;
 }());
+ContactComponent = __decorate([
+    core_1.Component({
+        selector: 'ContactComponent',
+        templateUrl: 'app/Contact/Contact.html'
+    }),
+    __metadata("design:paramtypes", [router_1.ActivatedRoute])
+], ContactComponent);
 exports.ContactComponent = ContactComponent;
 //# sourceMappingURL=Contact.js.map

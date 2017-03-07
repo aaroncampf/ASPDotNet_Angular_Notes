@@ -8,9 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var http_1 = require('@angular/http');
+var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
+var http_1 = require("@angular/http");
 var CompanyComponent = (function () {
     /*
     constructor(private route: ActivatedRoute) {
@@ -33,7 +33,8 @@ var CompanyComponent = (function () {
         this._http = _http;
         route.params.subscribe(function (params) {
             var ID = +params['id']; // (+) converts string 'id' to a number  
-            var Get = _this._http.get("api/Company?id=" + ID);
+            //let Get: any = this._http.get(`api/Company/Find?id=${ID}`);
+            var Get = _this._http.get("api/Company/" + ID);
             var Json = Get.map(function (x) { return x.json(); });
             Json.subscribe(function (x) {
                 _this.Record = x;
@@ -42,16 +43,16 @@ var CompanyComponent = (function () {
     }
     CompanyComponent.prototype.Save = function () {
         var body = JSON.stringify(this.Record);
-        this._http.post('api/Company', body);
+        this._http.post('api/Company', body, { headers: new Headers({ "Content-Type": "application/json" }) });
     };
-    CompanyComponent = __decorate([
-        core_1.Component({
-            selector: 'CompanyComponent',
-            templateUrl: 'app/Company/Company.html'
-        }), 
-        __metadata('design:paramtypes', [router_1.ActivatedRoute, http_1.Http])
-    ], CompanyComponent);
     return CompanyComponent;
 }());
+CompanyComponent = __decorate([
+    core_1.Component({
+        selector: 'CompanyComponent',
+        templateUrl: 'app/Company/Company.html'
+    }),
+    __metadata("design:paramtypes", [router_1.ActivatedRoute, http_1.Http])
+], CompanyComponent);
 exports.CompanyComponent = CompanyComponent;
 //# sourceMappingURL=Company.js.map

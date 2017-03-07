@@ -33,7 +33,8 @@ export class CompanyComponent {
         route.params.subscribe(params => {
             let ID = +params['id']; // (+) converts string 'id' to a number  
 
-            let Get: any = this._http.get(`api/Company?id=${ID}`);
+            //let Get: any = this._http.get(`api/Company/Find?id=${ID}`);
+            let Get: any = this._http.get(`api/Company/${ID}`);
             let Json: any = Get.map(x => x.json());
             Json.subscribe(x => {
                 this.Record = x;
@@ -42,6 +43,6 @@ export class CompanyComponent {
     }
     public Save() {
         let body = JSON.stringify(this.Record);
-        this._http.post('api/Company', body);
+        this._http.post('api/Company', body, { headers: new Headers({ "Content-Type": "application/json" }) );
     }
 }
