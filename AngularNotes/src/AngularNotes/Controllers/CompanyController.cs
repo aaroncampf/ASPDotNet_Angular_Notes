@@ -33,8 +33,9 @@ namespace WebApplication2.Controllers {
       return db.Companies;
     }
 
-    [HttpGet("Get/{id}")]
-    public Company Get(int Id) => Id == -1 ? new Company() : db.Companies.Find(Id);
+    //[HttpGet("Get/{id}")]
+    [HttpGet("{id}")]
+    public Company Get(string id) => id == "-1" ? new Company() : db.Companies.Find(int.Parse(id));
 
     [HttpPost]
     public void Post(Company company) {

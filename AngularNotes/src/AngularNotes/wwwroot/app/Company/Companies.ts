@@ -37,16 +37,16 @@ import 'rxjs/Rx';
 })
 @Injectable()
 export class CompaniesComponent implements OnInit {
-    public Companies: Company[];
+	public Companies: Company[];
 
 	constructor(private _http: Http) { }
 
-    ngOnInit() {
-        let Get: any = this._http.get('api/Company');
-        let Json: any = Get.map(x => x.json());
-        Json.subscribe(x => {
-            this.Companies = x;
-        });
-    }
+	ngOnInit() {
+		let Get: any = this._http.get('api/Company');
+		let Json: any = Get.map(x => x.json());
+		Json.subscribe(x => {
+			this.Companies = x;
+		});
+	}
 }
  

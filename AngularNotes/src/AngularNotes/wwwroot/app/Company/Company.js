@@ -33,7 +33,7 @@ var CompanyComponent = (function () {
         this._http = _http;
         route.params.subscribe(function (params) {
             var ID = +params['id']; // (+) converts string 'id' to a number  
-            var Get = _this._http.get("api/Company/" + ID);
+            var Get = _this._http.get("api/Company?id=" + ID);
             var Json = Get.map(function (x) { return x.json(); });
             Json.subscribe(function (x) {
                 _this.Record = x;
